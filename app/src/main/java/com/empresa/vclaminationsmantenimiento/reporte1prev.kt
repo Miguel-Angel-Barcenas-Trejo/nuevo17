@@ -120,9 +120,7 @@ class reporte1prev : AppCompatActivity() {
                 return "application/x-www-form-urlencoded; charset=UTF-8"
             }
         }
-
         requestQueue.add(request)
     }
-
 
 }

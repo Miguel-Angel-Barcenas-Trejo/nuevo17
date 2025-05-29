@@ -76,6 +76,8 @@ class reporte2 : AppCompatActivity() {
                             "Datos guardados en la colección: $nombreColeccion",
                             Toast.LENGTH_SHORT
                         ).show()
+                        // 👉 También enviar a Google Sheets
+                        enviarDatosAGoogleSheets(datos)
                     }
             }
 
@@ -91,6 +93,32 @@ class reporte2 : AppCompatActivity() {
             }
 
         }
+    }
+    private fun enviarDatosAGoogleSheets(datos: Map<String, String>) {
+        val urlWebhook = "https://script.google.com/macros/s/AKfycbxalYAZ9hoaoVowvK2SPyaxR1bxdVv7EQ7xPbqo17XP5FVzoPUvWZre_pnZXRidQyL7ag/exec"
+
+        val requestQueue = com.android.volley.toolbox.Volley.newRequestQueue(this)
+
+        val request = object : com.android.volley.toolbox.StringRequest(
+            com.android.volley.Request.Method.POST, urlWebhook,
+            { response ->
+                Toast.makeText(this, "Datos enviados a Google Sheets", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Respuesta del servidor: $response", Toast.LENGTH_LONG).show()
+            },
+            { error ->
+                Toast.makeText(this, "Error al enviar a Sheets", Toast.LENGTH_SHORT).show()
+                error.printStackTrace()
+            }
+        ) {
+            override fun getParams(): Map<String, String> {
+                return datos
+            }
+
+            override fun getBodyContentType(): String {
+                return "application/x-www-form-urlencoded; charset=UTF-8"
+            }
+        }
+        requestQueue.add(request)
     }
 }
 

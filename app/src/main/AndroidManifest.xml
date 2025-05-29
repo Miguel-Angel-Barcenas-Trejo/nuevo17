@@ -34,7 +34,8 @@
         <activity
             android:name=".reporte2"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Login por correo - Establecer como primera pantalla............................... -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- Login por correo - Establecer como primera pantalla............................... -->
         <activity
             android:name=".LoginEmail"
             android:exported="true">
@@ -43,7 +44,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- ................................................................................................. -->
+        </activity>
+        <!-- ................................................................................................. -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
