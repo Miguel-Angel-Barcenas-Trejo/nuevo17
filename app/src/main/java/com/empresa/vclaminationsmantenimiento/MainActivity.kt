@@ -106,9 +106,9 @@ class MainActivity : AppCompatActivity() {
     fun toggleGalleryOption2Menu(view: View) = toggleSubmenu(R.id.gallery_option2_submenu)
     fun toggleGalleryOption3Menu(view: View) = toggleSubmenu(R.id.gallery_option3_submenu)
     fun toggleGalleryOption4Menu(view: View) = toggleSubmenu(R.id.gallery_option4_submenu)
-    fun toggleSlideshowMenu(view: View) = toggleSubmenu(R.id.slideshow_submenu)
-    fun navigateToSlideshowOption1(view: View) = navigateToActivity(view)
-    fun navigateToSlideshowOption2(view: View) = navigateToActivity(view)
+    //fun toggleSlideshowMenu(view: View) = toggleSubmenu(R.id.slideshow_submenu)
+    //fun navigateToSlideshowOption1(view: View) = navigateToActivity(view)
+    //fun navigateToSlideshowOption2(view: View) = navigateToActivity(view)
 
 
     // ======================================================
@@ -121,6 +121,7 @@ class MainActivity : AppCompatActivity() {
      */
     fun navigateToActivity(view: View) {
         val destination = when (view.id) {
+            R.id.btn_ticket -> CrearTicket::class.java  // <- línea que abre CrearTicket al presionar el botón
             // Home
             R.id.btn_home_option1_item1 -> reporte1prev::class.java
             R.id.btn_home_option1_item2 -> reporte1prev::class.java
@@ -154,8 +155,8 @@ class MainActivity : AppCompatActivity() {
             // Gallery
             R.id.btn_gallery_option1_item1 -> reporte2::class.java
             // Slideshow
-            R.id.btn_slideshow_option1 -> SlideshowOption1Activity::class.java
-            R.id.btn_slideshow_option2 -> SlideshowOption2Activity::class.java
+            //R.id.btn_slideshow_option1 -> SlideshowOption1Activity::class.java
+            //R.id.btn_slideshow_option2 -> SlideshowOption2Activity::class.java
             // Default
             else -> reporte2::class.java
         }

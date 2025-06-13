@@ -946,57 +946,19 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Botón Slideshow desplegable -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_ticket"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="Crear ticket"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/ticket1"
+            android:onClick="navigateToActivity"
+            android:textColor="#0D47A1"
+            android:textSize="16sp"
+            android:gravity="start"
+            android:layout_gravity="end"/>
 
-            <Button
-                android:id="@+id/btn_slideshow"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:text="Crear ticket"
-                android:textAllCaps="false"
-                android:onClick="toggleSlideshowMenu"
-                android:textColor="#0D47A1"
-                android:textSize="16sp"
-                android:drawableRight="@drawable/flecha_desplegable"/>
-
-            <!-- Submenú de Slideshow (inicialmente oculto) -->
-            <LinearLayout
-                android:id="@+id/slideshow_submenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone"
-                android:paddingLeft="16dp">
-
-                <!-- Opción 1 de Slideshow -->
-                <Button
-                    android:id="@+id/btn_slideshow_option1"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="   Mantenimiento preventivo"
-                    android:drawableLeft="@drawable/ticket1"
-                    android:textAllCaps="false"
-                    android:onClick="navigateToSlideshowOption1"
-                    android:gravity="start"/>
-
-                <!-- Opción 2 de Slideshow -->
-                <Button
-                    android:id="@+id/btn_slideshow_option2"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="   Mantenimiento correctivo"
-                    android:drawableLeft="@drawable/ticket1"
-                    android:textAllCaps="false"
-                    android:onClick="navigateToSlideshowOption2"
-                    android:gravity="start"/>
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>
